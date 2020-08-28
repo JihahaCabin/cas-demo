@@ -1,6 +1,5 @@
 package com.haha.casmember.config;
 
-
 import org.jasig.cas.client.session.SingleSignOutFilter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -9,17 +8,12 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class FilterConfig {
-
     @Value("${cas.server-url-prefix}")
     private String CAS_URL;
-
     @Value("${cas.client-host-url}")
     private String APP_URL;
-
     /**
      * 单点登录退出
-     *
-     * @return
      */
     @Bean
     public FilterRegistrationBean singleSignOutFilter() {
@@ -33,9 +27,7 @@ public class FilterConfig {
     }
 
     /**
-     * 从casServer中获取登录信息，根据登录信息获取当前用户，创建session
-     *
-     * @return
+     * 从request中获取cas登录信息，根据登录信息获取当前用户，创建本地session
      */
     @Bean
     public FilterRegistrationBean registrationBean() {

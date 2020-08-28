@@ -33,7 +33,7 @@ public class FilterConfig {
     }
 
     /**
-     * 从casServer中获取登录信息，根据登录信息获取当前用户，创建session
+     * 从request中获取cas登录信息，根据登录信息获取当前用户，创建本地session
      *
      * @return
      */
